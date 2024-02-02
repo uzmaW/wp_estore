@@ -13,7 +13,7 @@ class Woo_Firebase_Monitor {
      */
     public function init_hooks() {
         // Add hooks and actions
-        add_action('init', array($this, 'init'));
+        //add_action('init', array($this, 'init'));
         add_action('woocommerce_order_status_refunded', array($this, 'send_stats_on_refund'), 10, 1);
         add_action('woocommerce_order_status_cancelled', array($this, 'send_stats_on_cancel'), 10, 1);
         add_action('woocommerce_new_order', array($this,'send_new_order_data_to_server'), 10, 1);
