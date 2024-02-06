@@ -14,4 +14,8 @@ return array(
     '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => $vendorDir . '/symfony/polyfill-mbstring/bootstrap.php',
     '06b8a576aaa70a8517a94b7ff6b37e5c' => $vendorDir . '/beste/json/src/Json.php',
     'b067bc7112e384b61c701452d53a14a8' => $vendorDir . '/mtdowling/jmespath.php/src/JmesPath.php',
+    '1e821336c09e2be1b5ac830b13b42448' => $baseDir . '/lib/woo_firebase.php',
+    '97ee3ab30597d78d844103305b3989ff' => $baseDir . '/woo_firebase_monitor.php',
+    'cb2bacaa605f32496774b5ee905cb7ef' => $baseDir . '/woo_firebase_report.php',
+    '6a88e20c200705cc588450dbdf3515f3' => $baseDir . '/woo_firebase_request.php',
 );

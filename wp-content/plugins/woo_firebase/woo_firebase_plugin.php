@@ -7,6 +7,7 @@ Version: 1.0
 Author: UI
 Author URI: http://vsee.space
 */
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
@@ -46,7 +47,7 @@ register_deactivation_hook(__FILE__, 'deactivate_firebase_monitor');
 
 function woo_firebase_monitor_init() {
     require_once plugin_dir_path(__FILE__) . 'woo_firebase_setup.php';
-    Woo_Firebase_Setup::init();
+    \Woo\Firebase\Woo_Firebase_Setup::init();
 }
 
 woo_firebase_monitor_init();    

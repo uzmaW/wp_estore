@@ -1,4 +1,5 @@
 <?php
+namespace Woo\Firebase;
 
 class Woo_Firebase_Report {
 

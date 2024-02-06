@@ -1,4 +1,5 @@
 <?php
+namespace Woo\Firebase;
 
 /** Plugin setup */
 class Woo_Firebase_Setup {
@@ -53,19 +54,24 @@ class Woo_Firebase_Setup {
             
             if(file_exists($plug_dir . 'vendor/autoload.php'))
                 require_once $plug_dir . 'vendor/autoload.php';
-            if(file_exists($plug_dir. 'woo_firebase_report.php'))
-                require_once $plug_dir . 'woo_firebase_report.php';
-            require_once $plug_dir . 'woo_firebase_monitor.php';
-            
-            // Install setup files
-            if (!class_exists('Kreait\Firebase\Factory')) {
-                // The class from kreait/firebase-php is not found, so try to install the library asynchronously    
+            else
+                throw new Exception('Composer autoloader not found.');
+
+            // Include the Firebase library
+            if (!class_exists('Woo_Firebase_Report')) {
+                // The class from kreait/firebase-php is not found, so try to install the library asynchronously
                 //$this->installFirebaseLibrary();
             }
+            
+            // Install setup files
+            /*if (!class_exists('MrShan0\PHPFirestore\FirestoreClient')) {
+                // The class from kreait/firebase-php is not found, so try to install the library asynchronously    
+                //$this->installFirebaseLibrary();
+            }*/
         } catch (Exception $e) {
             // Handle the exception
             wp_die('Error: ' . $e->getMessage());
-            //new WP_Error('Error: ' . $e->getMessage());
+            
         }   
     }
 

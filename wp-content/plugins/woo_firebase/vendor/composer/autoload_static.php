@@ -15,9 +15,17 @@ class ComposerStaticInit53cab80babe4b6ada5f197fa4d1dad36
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         '06b8a576aaa70a8517a94b7ff6b37e5c' => __DIR__ . '/..' . '/beste/json/src/Json.php',
         'b067bc7112e384b61c701452d53a14a8' => __DIR__ . '/..' . '/mtdowling/jmespath.php/src/JmesPath.php',
+        '1e821336c09e2be1b5ac830b13b42448' => __DIR__ . '/../..' . '/lib/woo_firebase.php',
+        '97ee3ab30597d78d844103305b3989ff' => __DIR__ . '/../..' . '/woo_firebase_monitor.php',
+        'cb2bacaa605f32496774b5ee905cb7ef' => __DIR__ . '/../..' . '/woo_firebase_report.php',
+        '6a88e20c200705cc588450dbdf3515f3' => __DIR__ . '/../..' . '/woo_firebase_request.php',
     );
 
     public static $prefixLengthsPsr4 = array (
+        'W' => 
+        array (
+            'Woo\\Firebase\\' => 13,
+        ),
         'S' => 
         array (
             'Symfony\\Polyfill\\Mbstring\\' => 26,
@@ -38,6 +46,7 @@ class ComposerStaticInit53cab80babe4b6ada5f197fa4d1dad36
         ),
         'M' => 
         array (
+            'MrShan0\\PHPFirestore\\' => 21,
             'Monolog\\' => 8,
         ),
         'L' => 
@@ -96,6 +105,10 @@ class ComposerStaticInit53cab80babe4b6ada5f197fa4d1dad36
     );
 
     public static $prefixDirsPsr4 = array (
+        'Woo\\Firebase\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/',
+        ),
         'Symfony\\Polyfill\\Mbstring\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
@@ -118,8 +131,8 @@ class ComposerStaticInit53cab80babe4b6ada5f197fa4d1dad36
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-            1 => __DIR__ . '/..' . '/psr/http-factory/src',
+            0 => __DIR__ . '/..' . '/psr/http-factory/src',
+            1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -132,6 +145,10 @@ class ComposerStaticInit53cab80babe4b6ada5f197fa4d1dad36
         'Psr\\Cache\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/cache/src',
+        ),
+        'MrShan0\\PHPFirestore\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/bensontrent/firestore-php/src',
         ),
         'Monolog\\' => 
         array (
@@ -152,6 +169,7 @@ class ComposerStaticInit53cab80babe4b6ada5f197fa4d1dad36
         'Kreait\\Firebase\\' => 
         array (
             0 => __DIR__ . '/..' . '/kreait/firebase-php/src/Firebase',
+            1 => __DIR__ . '/..' . '/kreait/firebase-php/src/Firebase',
         ),
         'JmesPath\\' => 
         array (
