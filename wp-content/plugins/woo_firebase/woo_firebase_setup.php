@@ -8,12 +8,16 @@ class Woo_Firebase_Setup {
 
 
     public static function init() {
-        $instance = self::getInstance();
-        
-        $instance->setupSystemFiles();     // setup system files
-        $instance->setupFirebaseMonitor(); // setup firebase log
-        $instance->setupDayEndSchedule();  // setup dayend schedule cron | firebase log
-
+        try {
+            $instance = self::getInstance();
+            
+            $instance->setupSystemFiles();     // setup system files
+            $instance->setupFirebaseMonitor(); // setup firebase log
+            $instance->setupDayEndSchedule();  // setup dayend schedule cron | firebase log
+        }   catch (Exception $e) {
+            // Handle the exception
+            wp_die('Error: ' . $e->getMessage(). ' line' . $e->getLine());            
+        }   
     }
 
     public function installFirebaseLibrary() {
@@ -30,7 +34,9 @@ class Woo_Firebase_Setup {
     public function setupDayEndSchedule() {
         // Schedule the event to run daily at midnight
         if (!wp_next_scheduled('send_all_orders_daily')) {
-            wp_schedule_event(strtotime('midnight'), 'daily', 'send_all_orders_daily');
+            // actual schedule to dayend data
+            //wp_schedule_event(strtotime('midnight'), 'daily', 'send_all_orders_daily');
+            wp_schedule_event(strtotime('midnight'), '3min', 'send_all_orders_daily');
         }
 
         // Hook the scheduled event to the function that sends all orders to the server
@@ -48,7 +54,7 @@ class Woo_Firebase_Setup {
     }
     
     public function setupSystemFiles() {
-        try {
+        
             // Include Composer autoloader
             $plug_dir=plugin_dir_path(__FILE__);
             
@@ -58,21 +64,17 @@ class Woo_Firebase_Setup {
                 throw new Exception('Composer autoloader not found.');
 
             // Include the Firebase library
-            if (!class_exists('Woo_Firebase_Report')) {
+            //if (!class_exists('Woo_Firebase_Report')) {
                 // The class from kreait/firebase-php is not found, so try to install the library asynchronously
                 //$this->installFirebaseLibrary();
-            }
+            //}
             
             // Install setup files
             /*if (!class_exists('MrShan0\PHPFirestore\FirestoreClient')) {
                 // The class from kreait/firebase-php is not found, so try to install the library asynchronously    
                 //$this->installFirebaseLibrary();
             }*/
-        } catch (Exception $e) {
-            // Handle the exception
-            wp_die('Error: ' . $e->getMessage());
-            
-        }   
+      
     }
 
     public static function destroy() {

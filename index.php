@@ -12,6 +12,6 @@
  * @var bool
  */
 define( 'WP_USE_THEMES', true );
-
+ini_set('display_errors', 1);
 /** Loads the WordPress Environment and Template */
 require __DIR__ . '/wp-blog-header.php';

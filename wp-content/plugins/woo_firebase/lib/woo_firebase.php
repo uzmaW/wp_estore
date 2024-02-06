@@ -50,8 +50,19 @@ function get_firebase()
         {
             return $this->collection;
         }
-        public function addDocument($payload)
+        public function addDocument($payload, $collection=null)
         {
+            if(!is_null($collection)) $this->collection = $collection;
+        
+            $data = [
+                'payload' => $payload,
+                'created_at' => time(),
+                'timestamp' => new FirestoreTimestamp,
+                'type' => 'log',
+                'id'=>uniqid()
+            ];
+            $this->firestoreClient->addDocument($this->collection, $data);
+        
             $data = [
                 'payload' => $payload,
                 'created_at' => time(),

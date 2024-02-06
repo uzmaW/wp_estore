@@ -29,7 +29,8 @@ class Woo_Firebase_Request
 
             //$item_id = $item->get_id();
         
-            $product = $item->get_product(); // Get the WC_Product object
+            $product = wc_get_product($item->get_product_id());
+
             $pr_data[] = [
                 'product_id'   => $item->get_product_id(), // the Product id
                 'variation_id' => $item->get_variation_id(), // the Variation id
@@ -40,9 +41,9 @@ class Woo_Firebase_Request
                 'line_subtotal_tax' => $item->get_subtotal_tax(), // Line subtotal tax (non discounted)
                 'line_total'        => $item->get_total(), // Line total (discounted)
                 'line_total_tax'    => $item->get_total_tax(), // Line total tax (discounted)
-                'product_type' => $product->get_type(),
-                'product_sku' => $product->get_sku(),
-                'product_price' => $product->get_price(),
+                'product_type' => $product instanceof WC_Product ? $product->get_type():"",
+                'product_sku' => $product instanceof WC_Product ? $product->get_sku():"",
+                'product_price' => $product instanceof WC_Product ? $product->get_price():"",
             ];
  
         endforeach;

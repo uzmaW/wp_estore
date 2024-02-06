@@ -1,6 +1,5 @@
 {
     "require": {
-        "kreait/firebase-php": "^7.9",
         "bensontrent/firestore-php": "^3.1"
     },
     "autoload": {

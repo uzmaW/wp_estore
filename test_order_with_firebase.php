@@ -1,9 +1,7 @@
 <?php
 include 'wp-load.php';
 include __DIR__.'/wp-content/plugins/woo_firebase/vendor/autoload.php';
-
-
-        try {
+    try {
             global $woocommerce;
             $address = array(
                 'first_name' => 'Tanmoy',
@@ -21,7 +19,6 @@ include __DIR__.'/wp-content/plugins/woo_firebase/vendor/autoload.php';
             
             // Now we create the order
             $order = wc_create_order();
-            
             // The add_product() function below is located in /plugins/woocommerce/includes/abstracts/abstract_wc_order.php
             $order->add_product( wc_get_product( 113 ), 1); // Use the product IDs to add
             
