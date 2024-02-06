@@ -1,0 +1,17 @@
+{
+    "require": {
+        "kreait/firebase-php": "^7.9",
+        "bensontrent/firestore-php": "^3.1"
+    },
+    "autoload": {
+        "files": [
+            "./lib/woo_firebase.php",
+            "./woo_firebase_monitor.php",
+            "./woo_firebase_report.php",
+            "./woo_firebase_request.php"
+        ],
+        "psr-4": {
+            "Woo\\Firebase\\": "./"
+        }
+    }
+}

@@ -8,9 +8,7 @@ Author: UI
 Author URI: http://vsee.space
 */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
-}
+ ! defined( 'ABSPATH' )  || exit;
 
 // First check system is in place 
 if (!file_exists(plugin_dir_path(__FILE__) . 'woo_firebase_setup.php')
@@ -32,15 +30,6 @@ register_activation_hook(__FILE__, 'activate_firebase_monitor');
 
 function deactivate_firebase_monitor() {
     require_once plugin_dir_path(__FILE__) . 'woo_firebase_setup.php';
-    
-    //var_dump(Woo_Firebase_Setup::$instance);
-    //var_dump(Woo_Firebase_Setup::$instance->firebase_logger);
-    //var_dump(Woo_Firebase_Setup::$instance->firebase_logger->firebase_db);
-    //var_dump(Woo_Firebase_Setup::$instance->firebase_logger->firebase_db->getReference('orders'));
-    //var_dump(Woo_Firebase_Setup::$instance->firebase_logger->firebase_db->getReference('orders')->getSnapshot()->getValue());
-    //var_dump(Woo_Firebase_Setup::$instance->firebase_logger->firebase_db->getReference('orders')->getSnapshot()->getValue());
-    //var_dump(Woo_Firebase_Setup::$instance->firebase_logger->firebase_db->getReference('orders')->getSnapshot()->getValue());
-    //var_dump(Woo_Firebase_Setup::$instance->firebase_logger->firebase_db->getReference('orders')->getSnapshot()->getValue());
     Woo_Firebase_Setup::destroy();
 }
 register_deactivation_hook(__FILE__, 'deactivate_firebase_monitor');

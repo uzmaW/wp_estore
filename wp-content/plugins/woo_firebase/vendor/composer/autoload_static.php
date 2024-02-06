@@ -169,7 +169,6 @@ class ComposerStaticInit53cab80babe4b6ada5f197fa4d1dad36
         'Kreait\\Firebase\\' => 
         array (
             0 => __DIR__ . '/..' . '/kreait/firebase-php/src/Firebase',
-            1 => __DIR__ . '/..' . '/kreait/firebase-php/src/Firebase',
         ),
         'JmesPath\\' => 
         array (
